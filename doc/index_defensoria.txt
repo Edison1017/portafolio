@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<title>Módulo 1 Unidad 3</title>
+
+	<!-- SCRIPTS -->
+	<script type="text/javascript" src="js/SCORM_API_wrapper.js"></script>
+	<script src="js/SCORM_CONFIG.js"></script>
+
+
+	<!-- PAGINA3 -->
+	<link rel="stylesheet" href="pages/welcome/welcome.css">	
+	<link rel="stylesheet" href="pages/pagesLibrary.css">
+	<link rel="stylesheet" href="pages/page1/page1.css">
+	<link rel="stylesheet" href="pages/page2/page2.css">
+    <link rel="stylesheet" href="pages/page3/page3.css">
+	<link rel="stylesheet" href="pages/page4/page4.css">
+	<link rel="stylesheet" href="pages/page5/page5.css">
+	<link rel="stylesheet" href="pages/page6/page6.css">
+	<link rel="stylesheet" href="pages/page7/page7.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+	<!-- HOJAS DE ESTILOS -->
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/loader.css">
+	<link rel="stylesheet" href="css/page.css">
+	<link rel="stylesheet" href="css/animations.css">
+
+
+	<!-- FUENTES -->
+	<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+	<!-- LOADER -->
+	<div class="lds-ring" id="loader">
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+	</div>
+	<!-- glosario -->
+	<div class="glosario">
+		<span class="btn__glosario">Glosario</span>
+		<span id="glosario_cerrar" class="btn__glosario">Cerrar</span>
+		<div class="content__glosario hidden__on">
+			<p class="content__glosario-items">
+				<span class="glosario__item">
+					<b>Derechos humanos:</b> Los derechos humanos son los derechos que tenemos básicamente por existir como seres humanos; no están garantizados por ningún estado. Estos derechos universales son <b>inherentes</b> a todos nosotros, con independencia de la nacionalidad, género, origen étnico o nacional, color, religión, idioma o cualquier otra condición. Varían desde los más fundamentales —el derecho a la vida— hasta los que dan valor a nuestra vida, como los derechos a la alimentación, a la educación, al trabajo, a la salud y a la libertad (Naciones Unidas).
+				</span>
+				<span class="glosario__item">
+					<b>Justicia Transicional:</b> : <i>“La justicia transicional alude a las formas en que países que dejan atrás periodos de conflicto y represión utilizan para enfrentarse a violaciones de derechos humanos masivas o sistemáticas, de tal magnitud y gravedad que el sistema judicial convencional no puede darles una respuesta adecuada”</i> (International Center for Transitional Justice).
+				</span>
+				<span class="glosario__item"> 
+					<b>Líder social:</b> "Es defensor o defensora cualquier persona o grupo que se dedica a la defensa, promoción, respeto y protección de los Derechos Humanos en el ámbito nacional e internacional y que además trabaja por la eliminación efectiva de las violaciones a los derechos humanos en el plano nacional, regional o local" (Programa Somos Defensores).
+				</span>
+				<span class="glosario__item">
+					<b>Marco Jurídico para la Paz:</b> El denominado marco jurídico para la paz es un Acto Legislativo –No. 1 de 201235– que modifica la Constitución Política de Colombia de 1991 y establece instrumentos jurídicos de justicia transicional. Esta norma jurídica pretende, por un lado, facilitar la reintegración a la vida civil de desmovilizados que participaron directa o indirectamente en el conflicto armado, así como ser el marco jurídico para lograr acuerdos de paz con algunos grupos al margen de ley como las Fuerzas Armadas Revolucionarias de Colombia - Ejército del Pueblo –FARC-EP–.( López Cárdenas, Carlos Mauricio y Uscanga Barradas, Abril. (2013). El marco jurídico para la paz desde la perspectiva de la responsabilidad internacional del Estado. JURÍDICAS. No. 2,Vol. 10, pp. 95-118. Manizales: Universidad de Caldas).
+				</span>
+				<span class="glosario__item">
+					<b>Sistema Interamericano de Derechos Humanos (SIDH):</b> Los Estados Americanos, en ejercicio de su soberanía y en el marco de la Organización de Estados Americanos, adoptaron una serie de instrumentos internacionales que se han convertido en la base de un sistema regional de promoción y protección de los derechos humanos, conocido como el Sistema Interamericano de Protección de los Derechos Humanos. Dicho Sistema reconoce y define los derechos consagrados en esos instrumentos y establece obligaciones tendientes a su promoción y protección (Corte Interamericana de Derechos Humanos).
+				</span>
+			</p>
+		</div>
+	</div>
+	<!-- <div id="bloqueoFondo" class="bloqueo-fondo"></div> --><!-- fondo transparente 0.5 -->
+	<!-- CARGA LA PANTALLA DE BIENVENIDO -->
+	<audio controls="" class="audio-media audio__bienvenida"  src="pages/welcome/audios/audio_inicial.mp3" ></audio>
+	<audio class="audio-media" src="pages/welcome/audios/haga_clic.mp3"></audio>
+
+	<object class="welcome" id="welcome" data="pages/welcome/welcome.html" name="contenedor">
+	</object>
+	<div class="btn-comenzar" id="btn-comenzar"
+		onclick="hiddenWelcome(); getNameStudent(); reproducirAudio(2); desbloquearMenu()">COMENZAR
+	</div>
+
+	<!-- CONTROL DE BARRA DE NAVEGACIÓN -->
+	<div id="menu-toggle">
+		<span id="show"><img src="images/btn_menu.svg" alt="botón abrir menú"></span>
+		<span id="shut"><img src="images/btn_cerrar.svg" alt="botón cerrar menú"></span>
+	</div>
+
+	<main>
+		<div class="bloqueo__vertical">
+			<p>Gire el dispositivo para visualizar el curso</p>
+		</div>
+		<nav id="side-bar">
+			<!-- BARRA DE NAVEGACIÓN  -->
+			<ul id="slideList" class="menu">
+			</ul>
+		</nav>
+
+		<div class="myslide fade"><!--page1 -->
+					<div class="diapositiva-uno">
+						<p class="title">Límites de la fuerza pública en una sociedad democrática</p><!-- ESCRIBIR AQUÍ EL TITULO -->
+						<!-- contenedor del slide 1 -->
+							<img src="pages/page1/images/img_page101.png" class="imgParrafo101">
+							<p class="parrafo101">Una de las bases de legitimidad democrática de un Estado, más allá de su impronta constitucional, es el talante de su gobierno y el comportamiento de la Fuerza Pública,<b class="negrita101"> sobre todo en casos de control a protestas, manifestaciones y otros actos ciudadanos 
+								que buscan mostrar inconformidad.</b></p>
+								<img src="pages/page1/images/img_page102.png" class="imgParrafo102">
+								<p class="parrafo102">También distinguimos una actuación legítima cuando la policía u otros organismos de la fuerza pública se enfrentan a la persecución del delito, pues<b class="negrita101"> debe haber una diferencia cualitativa entre quienes defienden la seguridad ciudadana y los delincuentes perseguidos por éstos.</b></p>
+									<img src="pages/page1/images/img_page103.png" class="imgParrafo103">
+									<p class="parrafo103">Tristemente, el comportamiento de algunos miembros de la policía que abusan de su poder y usan de manera desproporcionada armas que en principio no son letales pero cuyo uso las puede convertir en tales,<b class="negrita101"> ha mancillado la imagen de esa institución, y hoy no existe duda de la necesidad de su reforma profunda.</b></p>
+										<img src="pages/page1/images/img_page104.png" class="imgParrafo104">
+										<img id="puntero__next" src="./images/puntero.gif" alt="">
+								<audio controls="" class="audio-media audios" src="pages/page1/audios/audio_ppal_01.mp3"></audio>
+							<object class="page" data="pages/page1/page1.html" name="contenedor"></object>				
+						<p class="description">Unidad 3: Límites de la fuerza pública en una sociedad democrática</p>
+					</div>
+				</div>
+
+<!-- pagina 2 -->
+				<div class="myslide fade">
+					<div class="diapositiva-dos">
+						<p class="title">Los límites a la fuerza pública en un Estado de Derecho:</p><!-- ESCRIBIR AQUÍ EL TITULO -->
+						
+						<!-- contenedor del slide 2 -->
+						<img src="pages/page2/images/img_page202.png" class="imgMarco02">
+							<img src="pages/page2/images/img_page201.png" class="imgMarco01">
+								<img src="pages/page2/images/img_page203.png" class="imgTanque">
+									
+							<!-- botones de los tres pasos -->			
+							<button id="Btn_201" onclick="audioOff01(); BtnClic201(); restricconesPage2(0)"><img src="pages/page2/images/img_page204.png"></button>
+							<button id="Btn_202" disabled="true" onclick="audioOff01(); BtnClic202(); restricconesPage2(1)"><img src="pages/page2/images/img_page205.png" ></button>
+							<button id="Btn_203" disabled="true" onclick="audioOff01(); BtnClic203(); restricconesPage2(2)"><img src="pages/page2/images/img_page206.png" ></button>
+
+			<div id="content_201">				
+				<p class="parrafoScroll201">
+				En un reporte presentado el pasado 28 de Junio de 2021 por Temblores, se establece que, “entre el 28 de abril del 2021 y el 26
+				de junio del 2021, ocurrieron, al menos, <b class="ColorParrafo01">4687 casos de violencia por parte de la Fuerza Pública (sin incluir casos de
+				desapariciones).</b>Dentro de dichos casos,<b class="ColorParrafo01">
+				fue posible identificar 44 homicidios cuyo presunto agresor es un miembro de la Fuerza Pública.</b> Otros 29 homicidios en proceso de 
+				verificación de los cuales 13 están en proceso de esclarecimiento sobre si el presunto victimario pertenecía a la Fuerza
+				Pública.<b class="ColorParrafo01"> 4 son atribuibles a civiles armados en los que existen indicios de posible participación de miembros de la fuerza
+				pública.</b>9 están en proceso de verificación del escenario y contexto del hecho. 3 están en proceso de verificación de la
+				denuncia. 1617 víctimas de violencia física. 82 víctimas de agresiones oculares. 228 víctimas de disparos de arma de 
+				fuego. 28 víctimas de violencia sexual. 9 víctimas de violencia basada en género. 2005 detenciones arbitrarias en contra
+				de manifestantes.<b class="ColorParrafo01">784 intervenciones violentas en el marco de protestas pacíficas. 35 casos de uso de armas Venom por
+				parte del Esmad.</b>
+</p>
+		</div>
+		<div id="content_202">
+			<p class="parrafoScroll201">
+		Hasta ahora. Infortunadamente la respuesta policial ha incluido algunas veces las agresiones sexuales, y se sabe que al menos en
+		 un caso, una mujer policía fue víctima de una agresión sexual. Se trata de un elemento adicional de agresión ignominiosa contra 
+		 las mujeres violentadas. Este <b class="ColorParrafo01">“uso”</b> de la agresión sexual, <b class="ColorParrafo01">recuerda a la
+		 última dictadura argentina, la de 1976, que se caracterizó en muchos casos por agredir sexualmente a las mujeres que eran detenidas, y, en algunos casos, desaparecidas,
+		luego de ser violadas por militares o policías.</b> En igual sentido, la práctica de disparar a los ojos se ha usado 
+		en Chile como un elemento de agresión brutal adicional, porque aumentando el dolor, cegando a las víctimas, la
+		fuerza pública lanza un mensaje de terror.<b class="ColorParrafo01"> Atropellar con tanquetas también formó parte de prácticas sangrientas
+		en otros momentos de represión oficial intensificada en diversos países y épocas.</b>
+		</p>
+				</div>
+				<div id="content_203">
+					<p class="parrafoScroll202">
+					Pareciera que el catálogo de conductas violentas usado por el ESMAD y otros elementos de la fuerza pública, se hubiera
+					ampliado con otros capítulos de la <b class="ColorParrafo01">“Historia Universal de la Infamia”</b>, de la ignominia, y 
+				del abuso del poder.
+				</p>
+						</div>
+						
+									<!-- audios del slide 2 -->
+					<audio controls="" id="audios201" class="audios audioPage2" src="pages/page2/audios/audio_201.mp3"></audio>
+					<audio controls="" id="audios202" class="audios audioPage2" src="pages/page2/audios/audio_202.mp3"></audio>
+					<audio controls="" id="audios203" class="audios audioPage2" src="pages/page2/audios/audio_203.mp3"></audio>
+							<!-- punteros slide 2  -->
+							<div id="puntero_201"><img src="pages/page2/images/puntero1.png" class="puntero201"></div>
+							<div id="puntero_202"><img src="pages/page2/images/puntero1.png" class="puntero202"></div>
+							<div id="puntero_203"><img src="pages/page2/images/puntero1.png" class="puntero203"></div>
+							<div id="puntero_204"><img src="pages/page2/images/puntero.gif" class="puntero204"></div>
+								<audio controls="" class="audio-media audios" src="pages/page2/audios/audio_ppal_02.mp3"></audio>
+									<object class="page" data="pages/page2/page2.html" name="contenedor"></object>	
+										<p class="description">Unidad 3: Límites de la fuerza pública en una sociedad democrática</p>			
+					</div>
+				</div>
+								
+<!-- pagina 3 -->
+				<div class="myslide fade">
+					<div class="diapositiva-tres">
+						<p class="title">El apoyo militar a las acciones policiales de control a las protestas.</p><!-- ESCRIBIR AQUÍ EL TITULO -->						
+						<!-- contenedor del slide 3 -->
+						<img src="pages/page3/images/img301.png" class="img301">
+							<img src="pages/page3/images/img303.png" class="img303">
+								<img src="pages/page3/images/transp304.png" class="trans304">
+									<img src="pages/page3/images/img302.png" onclick="BtnMilitar301(); audioOff01(); restricconesPage3(0)" class="btnMilitar301">
+									<div id="TextoInterno301"><img src="pages/page3/images/texto301.png" class="TextInterno301">
+									<p class="militar303">
+										La figura de la "asistencia militar“, está consagrada hace 5 años en el artículo 170 del Código Nacional de Seguridad y Convivencia Ciudadana (Ley 1801 de 2016). Ese artículo establece que dicha asistencia 
+										<b class="boldazul">"Es el instrumento legal que puede aplicarse cuando hechos de grave alteración de la seguridad y la convivencia lo exijan, o ante riesgo o peligro inminente, o para afrontar emergencia o calamidad pública, a través del cual el Presidente de la República, podrá disponer, de forma temporal y excepcional de la asistencia de la fuerza militar. No obstante, los gobernadores y Alcaldes Municipales o Distritales podrán solicitar al Presidente de la República tal asistencia, quien evaluará la solicitud y tomará la decisión. La asistencia militar se regirá por los protocolos y normas especializadas sobre la materia y en coordinación con el comandante de Policía de la jurisdicción". </b>
+									</p>
+								</div>
+									<!-- puntero de slide 3 -->
+										<img id="puntero302" src="pages/page3/images/puntero.gif" class="puntero301">
+										<div id="puntero304"><img src="pages/page2/images/puntero.gif" class="puntero304"></div>
+						<audio id="audioPpal301" controls="" class="audio-media audios" src="pages/page3/audios/audio_ppal_03.mp3"></audio>
+						<object class="page" data="pages/page3/page3.html" name="contenedor"></object>
+						<p class="description">Unidad 3: Límites de la fuerza pública en una sociedad democrática</p>	
+					</div>
+					<!-- audios del slide 3 -->
+					<audio controls="" id="audios301" class="audios audioPage3" src="pages/page3/audios/audio_301.mp3"></audio>
+				</div>
+<!-- pagina 4 -->
+				<div class="myslide fade">
+					<div class="diapositiva-cuatro">
+						<p class="title">Marco básico interamericano en materia del derecho a la protesta:</p>
+						<button id="BtnPaso401" onclick="Btnclic401(); audioOff01(); restricconesPage4(0)"><img src="pages/page4/images/img401.png" class="ImgPasos401"></button>
+						<button id="BtnPaso402"  disabled="true" onclick="Btnclic402(); audioOff01(); restricconesPage4(1)"><img src="pages/page4/images/img402.png" class="ImgPasos402"></button>
+						<button id="BtnPaso403"  disabled="true" onclick="Btnclic403(); audioOff01(); restricconesPage4(2)"><img src="pages/page4/images/img403.png" class="ImgPasos403"></button>
+							<img src="pages/page4/images/info404.png" class="ImgInfo404">
+								<img src="pages/page4/images/trans401.png" class="trans401">
+								
+								<!-- informacion interna de modals slide 4 -->
+								<div id="content_401">
+									<div class="parrafoScroll401">
+										El Consejo de Estado en reciente sentencia sobre los derechos vulnerados con ocasión de algunas acciones policiales en el marco
+										de las protestas, nos recuerda que “el artículo 20 de la Declaración Universal de Derechos Humanos prevé que toda persona tiene
+										derecho a la libertad de reunión y de asociación pacífica y que nadie podrá ser obligado a pertenecer a una asociación. De 
+										igual manera, el Pacto Internacional de Derechos Civiles y Políticos establece en el artículo 21 el reconocimiento del derecho
+										a la reunión pacífica y dispone que el ejercicio de ese derecho sólo podrá estar sujeto a las restricciones que prevea la ley
+										y que sean necesarias en una sociedad democrática,<b class="ColorParrafo4401"> en interés de la seguridad nacional, de la 
+										seguridad pública o del orden público, o para proteger la salud o la moral pública o los derechos y libertades de los 
+										demás” </b> (Consejo de Estado, 2021, págs. 17 y 18, fundamentos jurídicos 4.1.3 y 4.1.3.1).
+									</div>
+								</div>
+								<div id="content_402">
+									<div class="parrafoScroll401">
+										El artículo 15 de la Convención Americana de DDHH establece que <b class="ColorParrafo401">“Se reconoce el derecho de reunión
+										pacífica y sin armas. </b>El ejercicio de tal derecho solo puede estar sujeto a las restricciones previstas por la ley, 
+										que sean necesarias en una sociedad democrática, en interés de la seguridad nacional, de la seguridad o del orden públicos, 
+										o para proteger la salud o la moral públicas o los derechos o libertades de los demás”. En la sentencia del Consejo de Estado
+										ya mencionada, también nos recuerda que “(…) el artículo 16 del tratado (se refiere a la Convención Americana) consagra la
+										libertad de asociación y, entre otras cosas, dispone que: <b class="ColorParrafo401">(i) </b>todas las personas tienen derecho
+										a asociarse libremente con fines ideológicos, religiosos, políticos, económicos, laborales, sociales, culturales, deportivos
+										o de cualquiera otra índole y <b class="ColorParrafo401">(ii)</b> el ejercicio de tal derecho sólo puede estar sujeto a
+										las restricciones previstas por la ley que sean necesarias en una sociedad democrática, en interés de la seguridad nacional
+										o del orden público, o para proteger la salud o la moral pública o los derechos y libertades de los demás” (Consejo de Estado,
+										2021, págs. 18, fundamento jurídico 4.1.3.3.1). 
+									</div>
+								</div>
+								<div id="content_403">
+									<div class="parrafoScroll401">
+										Estos artículos citados de los distintos instrumentos internacionales, así como la jurisprudencia interamericana que desarrolla
+										 los instrumentos de este sistema regional, tienen plena aplicabilidad en Colombia en virtud del bloque de constitucionalidad
+										consagrado en el artículo 93 de la C.P. de 1991. En relación con nuestro ámbito regional, porque Colombia es parte de la
+										Convención Americana de Derechos Humanos y también adhirió a la competencia contenciosa de la mencionada Corte, razón por
+										la cual, la jurisprudencia de este tribunal internacional es vinculante para nuestro país,<b class="ColorParrafo402"> tanto 
+										en relación con las sentencias que profiere ese tribunal como con las medidas provisionales que expide para proteger
+										personas en los distintos países como consecuencia de riesgos en su vida o integridad.</b> Así mismo en las opiniones
+										consultivas que produce en respuesta a las solicitudes de interpretación de la Convención Americana y de otros 
+										instrumentos del sistema regional. 
+									</div>
+								</div>									
+								<div id="Puntero401"><img src="pages/page4/images/puntero.gif" class="ImgPuntero401"></div>
+								<div id="Puntero402"><img src="pages/page4/images/puntero.gif" class="ImgPuntero402"></div>
+								<div id="Puntero403"><img src="pages/page4/images/puntero.gif" class="ImgPuntero403"></div>
+								<div id="puntero404"><img src="pages/page2/images/puntero.gif" class="ImgPuntero404"></div>
+								<audio id="audioPpal401" controls="" class="audio-media audios" src="pages/page4/audios/audio_ppal_04.mp3" ></audio>
+							<object class="page" data="pages/page4/page4.html" name="contenedor"></object>
+						<p class="description">Unidad 3: Límites de la fuerza pública en una sociedad democrática</p>
+				</div>
+				<!-- audios del slide 4 -->
+				<audio controls="" id="audios401" class="audios audioPage4" src="pages/page4/audios/audio_401.mp3"></audio>
+				<audio controls="" id="audios402" class="audios audioPage4" src="pages/page4/audios/audio_402.mp3"></audio>
+				<audio controls="" id="audios403" class="audios audioPage4" src="pages/page4/audios/audio_403.mp3"></audio>
+			</div>
+<!-- pagina 5 -->
+				<div class="myslide fade">
+					<div class="diapositiva-cinco">
+						<p class="title">Fallo de la Corte Interamericana de Derechos Humanos</p>
+						<!-- contenedor del slide 5 -->
+						<p class="parrafo501">La Corte Interamericana de Derechos Humanos en el 2018 ha señalado que la protesta pacífica es un derecho amparado por la Convención. En este sentido ha manifestado que:</p>
+						<!-- contendedores de la informacion de los 3 pasos -->
+						<button id="BtnPpal501" onclick="Btnppal501(); audioOff01(); restricconesPage5(0)"><img src="pages/page5/images/btnPPAL510.png" class="ImgBtn501"></button>
+						<button id="BtnPpal502" disabled="true" onclick="Btnppal502(); audioOff01(); restricconesPage5(1)"><img src="pages/page5/images/btnPPAL520.png" class="ImgBtn502"></button>
+						<button id="BtnPpal503" disabled="true" onclick="Btnppal503(); audioOff01(); restricconesPage5(2)"><img src="pages/page5/images/btnPPAL530.png" class="ImgBtn503"></button>						
+							<img src="pages/page5/images/fondo501.png" class="Imgfondo501">						
+							<img src="pages/page5/images/fondo501.png" class="Imgfondo502">
+							<img src="pages/page5/images/fondo501.png" class="Imgfondo503">						
+								<img src="pages/page5/images/parrafoFinal501.png" class="parrafo502">
+									<!-- informacion de contenedores internos de slide 5 -->
+							 	<div id="contentInterno501">
+									<p class="parrafoInterno501">
+										<i>“El derecho a protestar o manifestar inconformidad contra alguna acción o decisión estatal está protegido por el derecho de
+										reunión, consagrado en el artículo 15 de la Convención Americana…”.</i>
+									</p>
+								</div>
+								<div id="contentInterno502">
+									<p class="parrafoInterno502">
+										<i>“La posibilidad de manifestarse pública y pacíficamente es una de las maneras más accesibles de ejercer el derecho a la
+										libertad de expresión, por medio de la cual se puede reclamar la protección de otros derechos”, para concluir que “el 
+										derecho de reunión es un derecho fundamental en una sociedad democrática y no debe ser interpretado restrictivamente”.</i>
+									</p>
+								</div>
+								<div id="contentInterno503">
+									<p class="parrafoInterno503">
+										<i>“Los actos de violencia esporádica o los delitos que cometan algunas personas no deben atribuirse a otras cuyas
+										intenciones y comportamiento tienen un carácter pacífico. Por ello, las autoridades estatales deben extremar
+										sus esfuerzos para distinguir entre las personas violentas o potencialmente violentas y los manifestantes pacíficos.
+										Una gestión adecuada de las manifestaciones requiere que todas las partes interesadas protejan y hagan valer una 
+										amplia gama de derechos”.</i>
+									</p>
+								</div> 
+									<!-- puntero del slide 5 -->
+						<div id="imgPuntero501"><img src="pages/page5/images/puntero.gif" class="puntero501"></div>	
+						<div id="imgPuntero502"><img src="pages/page5/images/puntero.gif" class="puntero502"></div>		
+						<div id="imgPuntero503"><img src="pages/page5/images/puntero.gif" class="puntero503"></div>	
+						<div id="puntero504"><img src="pages/page2/images/puntero.gif" class="puntero504"></div>	
+						
+						<audio controls="" class="audio-media audios" src="pages/page5/audios/audio_ppal_05.mp3"></audio>			
+					<object class="page" data="pages/page5/page5.html" name="contenedor"></object>
+					<p class="description">Unidad 3: Límites de la fuerza pública en una sociedad democrática</p>	
+					
+					</div>
+					<!-- audios del slide 5 -->
+				<audio controls="" id="audios501" class="audios audioPage5" src="pages/page5/audios/audio_501.mp3"></audio>
+				<audio controls="" id="audios502" class="audios audioPage5" src="pages/page5/audios/audio_502.mp3"></audio>
+				<audio controls="" id="audios503" class="audios audioPage5" src="pages/page5/audios/audio_503.mp3"></audio>
+				</div>
+<!-- pagina 6 -->
+				<div class="myslide fade">
+					<div class="diapositiva-seis">
+						<!-- contenedor de informacion del slide 6 -->
+					<p class="title">La defensa de la democracia en un Estado de Derecho a la luz de la jurisprudencia interamericana:<br> Elementos básicos:</p>				
+						<p class="parrafo601"><b>La dimensión internacional de la noción:</b> defensa de la democracia en un Estado de
+							 Derecho, está desarrollada en varias sentencias de la Corte Interamericana de Derechos Humanos, veamos
+							  algunos ejemplos:</p>
+							  <img src="pages/page6/images/img601.png" class="ImgFrontal601">
+
+							  					<!-- punteros del slide 6 -->
+<div id="puntero601"><img src="pages/page6/images/puntero.gif" class="ImgPuntero601"></div>
+<div id="puntero602"><img src="pages/page6/images/puntero.gif" class="ImgPuntero601"></div>
+<div id="puntero603"><img src="pages/page6/images/puntero.gif" class="ImgPuntero601"></div>
+<div id="puntero604"><img src="pages/page6/images/puntero.gif" class="ImgPuntero601"></div>
+<div id="puntero605"><img  src="pages/page2/images/puntero.gif" class="puntero204"></div>
+							  <!-- botones de los 4 pasos slide 6 -->
+<button id="BtnPasos601" onclick="Pasos601(); audioOff01()"><img src="pages/page6/images/Btn601.png" class="ImgPasos601"></button>							  
+<button id="BtnPasos602" disabled="true" onclick="Pasos602(); audioOff01()"><img src="pages/page6/images/btn602.png" class="ImgPasos602"></button>
+<button id="BtnPasos603" disabled="true" onclick="Pasos603(); audioOff01()"><img src="pages/page6/images/btn603.png" class="ImgPasos603"></button>							  
+<button id="BtnPasos604" disabled="true" onclick="Pasos604(); audioOff01()"><img src="pages/page6/images/btn604.png" class="ImgPasos604"></button>
+		  <img src="pages/page5/images/parrafoFinal501.png" class="parrafo6603">
+		  <!-- contendedor interno de 4 pasos slide 6 -->
+							<div id="contenedor_gris601"> 
+								<audio controls="" id="audios1601" class="audios audioPage6" src="pages/page6/audios/audio_601.mp3"></audio>
+								<div class="contenedor_blanco601">
+									<p class="titulo601">En el Caso López Lone y otros Vs. Honduras</p>
+									<img src="pages/page6/images/interno601.png" class="ImgInterno601">
+									<p class="titulo602"><i>El derecho de defender la democracia… constituye una específica concretización del derecho a participar en los asuntos públicos y comprende a su vez el ejercicio conjunto de otros derechos como la libertad de expresión y la libertad de reunión…”.</i></p>
+									<p class="titulo603">La (Corte Interamericana de Derechos Humanos, 2015) sostuvo que:</p>
+									<p class="titulo604">Tenemos además que según la Corte Interamericana, protestar forma parte de la defensa de la democracia y no es un ataque a la misma, como parece entenderlo el Gobierno al destinar la Fuerza militar a la contención de las marchas, bajo el entendido que las protestas atentan contra el orden constitucional.</p>
+										<img src="pages/page6/images/interno602.png" class="ImgInterno602">
+											<img src="pages/page6/images/cerrar.png" onclick="Btn_cerrar601()" class="ImgCerrar601">
+											<img src="pages/page6/images/puntero.gif" class="puntero601">
+											
+												
+							</div>
+						</div>
+						<div id="contenedor_gris602"> 
+							<audio controls="" id="audios1602" class="audios audioPage6" src="pages/page6/audios/audio_602.mp3"></audio>
+							<div class="contenedor_blanco601">
+								<img src="pages/page6/images/interno603.png" class="ImgInterno603">
+								<p class="titulo605">En el caso Montero Aranguren y otros (Retén <br>de Catia) Vs. Venezuela</p>
+									<p class="parrafoInterno601">
+										Según el tribunal interamericano, las restricciones al ejercicio de los derechos deben obedecer a criterios de idoneidad,
+										 necesidad y proporcionalidad, criterios que no han sido tomados en cuenta en el control a las marchas y protestas que se 
+										 adelantan desde el 28 de abril pasado, no sólo en relación con la actuación de la fuerza policial, sino en relación con el 
+										 involucramiento del Ejército, que no resulta idóneo ni proporcional, considerando su naturaleza constitucional, así como su
+										  entrenamiento y experticia. En el caso Montero Aranguren y otros (Retén de Catia) Vs. Venezuela, la (Corte Interamericana
+										   de Derechos Humanos, 2006) ha recordado a este respecto que: 
+									</p>
+									<p class="titulo606"><i>Los Estados deben limitar al máximo el uso de las fuerzas armadas para el control de disturbios internos, puesto que el entrenamiento que reciben está dirigido a derrotar al enemigo, y no a la protección y control de civiles, entrenamiento que es propio de los entes policiales.</i></p>
+										<img src="pages/page6/images/cerrar.png" onclick="Btn_cerrar601()" class="ImgCerrar601">
+										<img src="pages/page6/images/puntero.gif" class="puntero601">
+											
+						</div>
+					</div>
+					<div id="contenedor_gris603"> 
+						<audio controls="" id="audios1603" class="audios audioPage6" src="pages/page6/audios/audio_603.mp3"></audio>
+						<div class="contenedor_blanco601">
+							<img src="pages/page6/images/interno604.png" class="ImgInterno6014">
+							<p class="titulo607">En el plano nacional (Consejo de Estado, <br>2021, pág. Fundamento Jurídico 47)</p>
+							<p class="titulo608">En el plano nacional, en un reciente pronunciamiento el (Consejo de Estado, 2021, pág. Fundamento Jurídico 47), ha advertido que:</p>
+								<img src="pages/page6/images/interno605.png" class="ImgInterno6010">
+								<p class="titulo609"><i>(…) los límites al ejercicio de los derechos fundamentales de reunión y manifestación y protesta públicas y pacíficas solo pueden ser establecidos razonada y justificadamente por el legislador, tal y como ha expresado la Corte Constitucional en diversos pronunciamientos.</i></p>
+									<img src="pages/page6/images/cerrar.png" onclick="Btn_cerrar601()" class="ImgCerrar601">
+									<img src="pages/page6/images/puntero.gif" class="puntero601">
+										
+					</div>
+				</div>
+				<div id="contenedor_gris604"> 
+					<audio controls="" id="audios1604" class="audios audioPage6" src="pages/page6/audios/audio_604.mp3"></audio>
+					<div class="contenedor_blanco601">
+						<img src="pages/page6/images/interno606.png" class="ImgInterno6015">
+						<p class="parrafoInterno602">
+						La medida consistente en destinar la Fuerza Militar a la contención de protestas civiles, carece de idoneidad, pues, como se
+						ha subrayado, lo que caracteriza la actuación de las Fuerzas Militares es el uso de fuerza letal propio de su entrenamiento y
+						actividades. Por esa razón, y apelando nuevamente a la jurisprudencia regional en DDHH, en el caso Montero Aranguren y otros
+						(Retén de Catia) Vs. Venezuela, ya citado, la (Corte Interamericana de Derechos Humanos, 2006) precisó que:
+						</p>
+						<p class="parrafoInterno603">
+						<b class="ColorParrafo601">En un mayor grado de excepcionalidad </b>se ubica el uso de la fuerza letal y las armas de fuego por parte de agentes de seguridad
+						estatales contra las personas,<b class="ColorParrafo01"> el cual debe estar prohibido como regla general.</b> Su uso excepcional deberá estar formulado por 
+						ley, y ser interpretado restrictivamente de manera que sea minimizado en toda circunstancia, no siendo más que el “absolutamente
+						necesario” en relación con la fuerza o amenaza que se pretende repeler.<b class="ColorParrafo01"> Cuando se usa fuerza excesiva toda privación de la vida
+						resultante es arbitraria.</b>
+						</p>
+								<img src="pages/page6/images/cerrar.png" onclick="Btn_cerrar602()" class="ImgCerrar601">
+								<img src="pages/page6/images/puntero.gif" class="puntero601">
+									
+				</div>
+			</div>
+				<audio controls="" class="audio-media audios" src="pages/page6/audios/audio_ppal_06.mp3" ></audio>			
+						<object class="page" data="pages/page6/page6.html" name="contenedor"></object>
+							<p class="description">Unidad 3: Límites de la fuerza pública en una sociedad democrática</p>
+
+					</div>
+				</div>
+<!-- pagina 7 -->
+<!-- fin del curso -->
+			<div class="myslide fade">
+				<div class="diapositiva-siete">
+					<p class="title__felicitaciones">¡FELICITACIONES!</p><!-- ESCRIBIR AQUÍ EL TITULO -->
+					<img class="logo__page12" src="pages/page7/images/Imagen6.png" alt="">
+					<img src="pages/page7/images/img701.png" class="img701">
+					<audio controls="" class="audio-media audios" src="pages/page7/audios/audio_ppal_07.mp3"></audio>
+					<object class="page" data="pages/page7/page7.html" name="contenedor"></object>
+					<p class="description">Unidad 3: Límites de la fuerza pública en una sociedad democrática</p>
+				</div>
+			</div>
+
+
+			<a id="prev" class="prev" onclick="plusSlides(-1)"><img src="images/btn_anterior.svg" alt="botón anterior"></a>
+			<a id="next" class="next" onclick="plusSlides(1)"><img src="images/btn_siguiente.svg" alt="botón siguiente"></a>
+			<!-- /onclick js -->
+			
+		</main>
+
+		<script src="js/slides.js"></script>
+		<script src="pages/page1/page1.js"></script>
+		<script src="pages/page2/page2.js"></script>
+		<script src="pages/page3/page3.js"></script>
+		<script src="pages/page4/page4.js"></script>
+		<script src="pages/page5/page5.js"></script>
+		<script src="pages/page6/page6.js"></script>
+		<script src="pages/page7/page7.js"></script>
+		
+		
+		
+	</body>
+</html>
